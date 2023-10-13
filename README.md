@@ -1,2 +1,4 @@
 # TODO-lista
 TO-DO Lista Pythonissa
+
+# PROJEKTI ON VIELÄ PAHASTI KESKEN
