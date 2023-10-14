@@ -1,5 +1,6 @@
 from TODOManager import LueTXT, PoistaTODO, TulostaTODO, LisaaTODO
 from TODOManager.TODOLista import TODO
+from datetime import datetime
 
 
 def main():
@@ -41,8 +42,7 @@ def poista(valinta : int): # Poistaa tehtäviä
         poistettava = int(input("Minkä tehtävän haluat poistaa?: "))
         varmasti = input("Oletko varma? (k/E): ")
         if (varmasti.lower() == "k"):
-            todo = TODO.GetTODO(valinta)
-            PoistaTODO.Poista(todo)
+            PoistaTODO.Poista(poistettava)
     elif valinta == 2:
         PoistaTODO.PoistaSuoritetut()
     elif valinta == 3:
@@ -52,9 +52,29 @@ def poista(valinta : int): # Poistaa tehtäviä
 
 
 def lisaa(): # Lisää tehtäviä
-    otsikko = input("Otsikko: ")
+    
+    while True:
+        otsikko = input("Otsikko: ")
+        if otsikko != "":
+            break
+        else:
+            print("Otsikko ei voi olla tyhjä!")
+    
     kuvaus = input("Kuvaus: ")
-    maarapaiva = input("Määräpäivä: ")
+    
+    while True:
+        maarapaiva = input("Määräpäivä (muodossa pp.kk.vvvv): ")
+        try:
+            if maarapaiva.count(".") == 1: # Jos maarapaiva on muodossa pp.kk
+                maarapaiva += "." + str(datetime.now().year)
+            elif maarapaiva.count(".") == 2 and maarapaiva.endswith("."): # Jos maarapaiva on muodossa pp.kk.
+                maarapaiva += str(datetime.now().year)
+
+            datetime.strptime(maarapaiva, '%d.%m.%Y')
+            break
+        except ValueError:
+            print("Virheellinen päivämäärä, yritä uudelleen.")
+    
     LisaaTODO.LisaaTODO(otsikko, kuvaus, maarapaiva)
     
 

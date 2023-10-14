@@ -27,8 +27,17 @@ class TODO:
         return cls.todoLista
     
     @classmethod
-    def GetTODO(cls, numero): # Palauttaa tietyn tehtävän todoListasta
-        return cls.todoLista[numero]
+    def GetTODO(cls, id): # Palauttaa tietyn tehtävän todoListasta ID perusteella
+        for todo in cls.todoLista:
+            if todo.ID == id:
+                return todo
+        return None
     @classmethod
     def GetNextID(cls): # Palauttaa seuraavan ID:n
         return int(len(cls.todoLista))
+    @classmethod
+    def PoistaTODOListasta(cls, todo): # Palauttaa seuraavan ID:n
+        if todo in cls.todoLista:
+            cls.todoLista.remove(todo)
+            return True
+        return False

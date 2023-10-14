@@ -6,11 +6,17 @@ from TODOManager.TODOLista import TODO
 # /////////////////////////////////////////////////////////////////
 
 
-def Poista(todo): # Poistaa tietyn todo tehtävän
+def Poista(id : int): # Poistaa tietyn todo tehtävän
     
-    todoLista = TODO.GetTODOLista()
-    todoLista.remove(todo)
-    print(f"{todo.otsikko} poistettiin onnistuneesti!")
+    todo = TODO.GetTODO(id)
+    if (todo == None):
+        print("ID:tä ei löytynyt!")
+        return
+    poista = TODO.PoistaTODOListasta(todo)
+    if (poista):
+        print(f"{todo.otsikko} poistettiin onnistuneesti!")
+    else:
+        print("Poistaminen epäonnistui!")
 
 
 def PoistaSuoritetut():
