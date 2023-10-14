@@ -19,16 +19,16 @@ class TODO:
         self.onSuoritettu = onSuoritettu
 
     @classmethod
-    def LisaaTODOListaan(cls, toDo):
+    def LisaaTODOListaan(cls, toDo): # Lisää tehtävän todoListaan
         cls.todoLista.append(toDo)
     
     @classmethod
-    def GetTODOLista(cls):
+    def GetTODOLista(cls): # Palauttaa todoListan
         return cls.todoLista
     
     @classmethod
-    def GetTODO(cls, numero):
+    def GetTODO(cls, numero): # Palauttaa tietyn tehtävän todoListasta
         return cls.todoLista[numero]
     @classmethod
-    def GetNextID(cls):
+    def GetNextID(cls): # Palauttaa seuraavan ID:n
         return int(len(cls.todoLista))

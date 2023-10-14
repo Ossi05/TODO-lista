@@ -6,7 +6,7 @@ from TODOManager.TODOLista import TODO
 # /////////////////////////////////////////////////////////////////
 
 
-def Poista(todo): # Koodi sekasin
+def Poista(todo): # Poistaa tietyn todo tehtävän
     
     todoLista = TODO.GetTODOLista()
     todoLista.remove(todo)

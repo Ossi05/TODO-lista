@@ -6,11 +6,12 @@ def main():
     LueTXT.LueTODO()
 
     while True:
+        # Tulostaa vaihtoehtodot
         print("\n1. Tulosta tehtävät"
               "\n2. Lisää tehtävä"
               "\n3. Poista tehtävä"
               "\n4. Lopeta?\n")
-        valinta = int(input("Mitä tehdään?: "))
+        valinta = int(input("Mitä tehdään?: ")) # Kysyy käyttäjältä mitä tehdään
         print("\n")
 
         if valinta == 1:
@@ -29,7 +30,7 @@ def main():
     
 
 
-def poista(valinta : int):
+def poista(valinta : int): # Poistaa tehtäviä
 
     print("Mitä haluat poistaa? 1. Tietty tehtävä 2. Kaikki suoritetut tehtävät 3. Kaikki tehtävät")
     valinta = int(input("Valinta: "))
@@ -50,14 +51,14 @@ def poista(valinta : int):
         print("Valintaa ei löytynyt!")
 
 
-def lisaa():
+def lisaa(): # Lisää tehtäviä
     otsikko = input("Otsikko: ")
     kuvaus = input("Kuvaus: ")
     maarapaiva = input("Määräpäivä: ")
     LisaaTODO.LisaaTODO(otsikko, kuvaus, maarapaiva)
     
 
-def TulostaTehtavat():
+def TulostaTehtavat(): # Tulostaa tehtäviä
     TulostaTODO.TulostaTODOTehtavat()
 
 
