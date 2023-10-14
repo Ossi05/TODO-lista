@@ -32,9 +32,11 @@ class TODO:
             if todo.ID == id:
                 return todo
         return None
+    
     @classmethod
     def GetNextID(cls): # Palauttaa seuraavan ID:n
         return int(len(cls.todoLista))
+    
     @classmethod
     def PoistaTODOListasta(cls, todo): # Palauttaa seuraavan ID:n
         if todo in cls.todoLista:
