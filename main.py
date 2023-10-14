@@ -1,6 +1,5 @@
-from TODOManager import LueTXT, PoistaTODO, TulostaTODO
+from TODOManager import LueTXT, PoistaTODO, TulostaTODO, LisaaTODO
 from TODOManager.TODOLista import TODO
-from time import sleep
 
 
 def main():
@@ -21,7 +20,7 @@ def main():
         elif valinta == 3:         
             poista(valinta)
         elif valinta == 4:
-            Kirjoita()
+            break
         else:
             print("Valintaa ei löytynyt!")
             continue
@@ -52,10 +51,11 @@ def poista(valinta : int):
 
 
 def lisaa():
-    ()
-
-def Kirjoita():
-    ()
+    otsikko = input("Otsikko: ")
+    kuvaus = input("Kuvaus: ")
+    maarapaiva = input("Määräpäivä: ")
+    LisaaTODO.LisaaTODO(otsikko, kuvaus, maarapaiva)
+    
 
 def TulostaTehtavat():
     TulostaTODO.TulostaTODOTehtavat()

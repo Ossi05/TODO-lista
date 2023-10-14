@@ -10,7 +10,8 @@ class TODO:
 
     todoLista = []
 
-    def __init__(self, otsikko, kuvaus, luotuPaivamaara, maarapaiva, onSuoritettu):
+    def __init__(self, id, otsikko, kuvaus, luotuPaivamaara, maarapaiva, onSuoritettu):
+        self.ID = id
         self.otsikko = otsikko
         self.kuvaus = kuvaus
         self.luotuPaivamaara = luotuPaivamaara
@@ -28,3 +29,6 @@ class TODO:
     @classmethod
     def GetTODO(cls, numero):
         return cls.todoLista[numero]
+    @classmethod
+    def GetNextID(cls):
+        return int(len(cls.todoLista))

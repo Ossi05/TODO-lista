@@ -20,5 +20,8 @@ def PoistaSuoritetut():
 def PoistaKaikki():
     ()
 
+def PoistaValitut():
+    ()
+
 
 

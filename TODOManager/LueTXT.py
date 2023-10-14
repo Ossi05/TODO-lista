@@ -11,6 +11,7 @@ def LueTODO():
 
     TODO = TODOLista.TODO
     riviLista = []
+    id = 0
 
     with open("ToDoLista.txt", "r", encoding="utf-8") as Tiedosto:
         for rivi in Tiedosto:
@@ -27,8 +28,8 @@ def LueTODO():
                     onSuoritettu = False
 
                 if (rivi.endswith("Tekemättä")): # Tarkista löytyykö Tekemättä sanaa rivin lopusta
-                    todo = TODO(riviLista[0], riviLista[2], paivamaarat[0], paivamaarat[1], onSuoritettu)
+                    todo = TODO(id, riviLista[0], riviLista[2], paivamaarat[0], paivamaarat[1], onSuoritettu)
                     TODO.LisaaTODOListaan(todo)
-
+                id += 1
                 riviLista.clear() # Tyhjennä riviLista
 
