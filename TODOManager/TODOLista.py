@@ -10,11 +10,11 @@ class TODO:
 
     todoLista = []
 
-    def __init__(self, otsikko, kuvaus, luotuPaivamaara, viimmeinenPaivamaara, onSuoritettu):
+    def __init__(self, otsikko, kuvaus, luotuPaivamaara, maarapaiva, onSuoritettu):
         self.otsikko = otsikko
         self.kuvaus = kuvaus
         self.luotuPaivamaara = luotuPaivamaara
-        self.viimmeinenPaivamaara = viimmeinenPaivamaara
+        self.maarapaiva = maarapaiva
         self.onSuoritettu = onSuoritettu
 
     @classmethod

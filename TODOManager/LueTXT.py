@@ -25,6 +25,8 @@ def LueTODO():
                 onSuoritettu = True
                 if (rivi.find("X") != -1): # Tarkista löytyykö X merkkiä Tekemättä kohdasta (Tehtävää ei suoritettu)
                     onSuoritettu = False
+
+                if (rivi.endswith("Tekemättä")): # Tarkista löytyykö Tekemättä sanaa rivin lopusta
                     todo = TODO(riviLista[0], riviLista[2], paivamaarat[0], paivamaarat[1], onSuoritettu)
                     TODO.LisaaTODOListaan(todo)
 

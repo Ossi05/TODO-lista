@@ -7,32 +7,35 @@ def main():
     LueTXT.LueTODO()
 
     while True:
-        print("1. Tulosta tehtävät"
+        print("\n1. Tulosta tehtävät"
               "\n2. Lisää tehtävä"
               "\n3. Poista tehtävä"
-              "\n4. Lopeta")
+              "\n4. Lopeta?\n")
         valinta = int(input("Mitä tehdään?: "))
+        print("\n")
 
         if valinta == 1:
             TulostaTehtavat()
         elif valinta == 2:
             lisaa()
-        elif valinta == 3:
-            print("Mitä haluat poistaa? 1. Tietty tehtävä 2. Kaikki suoritetut tehtävät 3. Kaikki tehtävät")
-            valinta = int(input("Valinta: "))
-            print("Sinun tehtävät ovat: ")
-            TulostaTODO.TulostaTODOTehtavat()
+        elif valinta == 3:         
             poista(valinta)
         elif valinta == 4:
             Kirjoita()
         else:
             print("Valintaa ei löytynyt!")
+            continue
         
-        sleep(5)
+        input("Paina enter jatkaaksesi...")
     
 
 
 def poista(valinta : int):
+
+    print("Mitä haluat poistaa? 1. Tietty tehtävä 2. Kaikki suoritetut tehtävät 3. Kaikki tehtävät")
+    valinta = int(input("Valinta: "))
+    print("Sinun tehtävät ovat: ")
+    TulostaTODO.TulostaTODOTehtavat()
 
     if valinta == 1:
         poistettava = int(input("Minkä tehtävän haluat poistaa?: "))
