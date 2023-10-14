@@ -17,10 +17,14 @@ def main():
 
         if valinta == 1:
             TulostaTehtavat()
+            # Fuse kutsu tässä KirjoitaTODO.py kun saat sen valmiiks. että sitä voi testata.
+            # Tallenna ne vaikka johonkin testi.txt tiedostoon
         elif valinta == 2:
             lisaa()
+            # Fuse kutsu tässä KirjoitaTODO.py kun saat sen valmiiks. että sitä voi testata
         elif valinta == 3:         
             poista(valinta)
+            # Fuse kutsu tässä KirjoitaTODO.py kun saat sen valmiiks. että sitä voi testata
         elif valinta == 4:
             break
         else:
