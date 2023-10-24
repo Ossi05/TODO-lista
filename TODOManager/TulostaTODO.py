@@ -58,21 +58,18 @@ def TulostaTODOTehtava(todo): # Tulostaa tietyn tehtavan
     table.add_row([todo.ID, todo.otsikko, kuvaus ,todo.luotuPaivamaara, maarapaiva, suoritettu]) 
     print(table) # TUlostaa taulukon
 
-def TulostaSuoritetutTehtavat(): # Tulostaa suoritetut tehtavat
-    table = PrettyTable()
-    table.field_names = todoOtsikot
-    for todo in todoLista:
-        if (todo.onSuoritettu == True): # Tarkistaa onko tehtava suoritettu
-            suoritettu, kuvaus, maarapaiva = TarkistaTODO(todo)                  
-            table.add_row([todo.ID, todo.otsikko, kuvaus ,todo.luotuPaivamaara, maarapaiva, suoritettu])
-    print(table)
+def TulostaSuoritetutTehtavat(): 
+    TulostaTehtavatSuorituksenMukaan(True) # Kutsuu TulostaTehtavatSuorituksenMukaan funktiota
 
 
-def TulostaTekemattomatTehtavat(): # Tulostaa tekemattomat tehtavat
+def TulostaTekemattomatTehtavat(): 
+    TulostaTehtavatSuorituksenMukaan(False) # Kutsuu TulostaTehtavatSuorituksenMukaan funktiota
+
+def TulostaTehtavatSuorituksenMukaan(suoritettu): # Tulostaa tekemattomat tai suoritetut tehtavat
     table = PrettyTable()
     table.field_names = todoOtsikot
     for todo in todoLista: # Käy läpi kaikki tehtavat
-        if (todo.onSuoritettu == False): # Tarkistaa onko tehtava tekematta
+        if (todo.onSuoritettu == suoritettu):
             suoritettu, kuvaus, maarapaiva = TarkistaTODO(todo)                    
             table.add_row([todo.ID, todo.otsikko, kuvaus ,todo.luotuPaivamaara, maarapaiva, suoritettu])
     print(table)
