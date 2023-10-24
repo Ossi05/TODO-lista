@@ -38,7 +38,7 @@ class TODO:
         return int(len(cls.todoLista))
     
     @classmethod
-    def PoistaTODOListasta(cls, todo): # Palauttaa seuraavan ID:n
+    def PoistaTODOListasta(cls, todo): # Poistaa todo:n TODOListasta
         if todo in cls.todoLista:
             cls.todoLista.remove(todo)
             return True
