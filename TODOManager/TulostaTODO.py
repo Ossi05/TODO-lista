@@ -20,7 +20,23 @@ def TulostaTODOTehtavat():  # Tulostaa kaikki tehtavat
         table.add_row([todo.ID, todo.otsikko, kuvaus ,todo.luotuPaivamaara, maarapaiva, suoritettu])
 
     print(table) # Tulostaa taulukon
-    
+
+def TulostaTODOTehtava(todo): # Tulostaa tietyn tehtavan
+    table = PrettyTable()
+    table.field_names = todoOtsikot # Asettaa otsikot
+    suoritettu, kuvaus, maarapaiva = TarkistaTODO(todo)                   
+    # Lisää tehtavan tiedot taulukkoon
+    table.add_row([todo.ID, todo.otsikko, kuvaus ,todo.luotuPaivamaara, maarapaiva, suoritettu]) 
+    print(table) # TUlostaa taulukon
+
+def TulostaSuoritetutTehtavat(): 
+    TulostaTehtavatSuorituksenMukaan(True) # Kutsuu TulostaTehtavatSuorituksenMukaan funktiota
+
+
+def TulostaTekemattomatTehtavat(): 
+    TulostaTehtavatSuorituksenMukaan(False) # Kutsuu TulostaTehtavatSuorituksenMukaan funktiota
+
+
 def TarkistaTODO(todo : TODO):
 
     maarapaiva = todo.maarapaiva
@@ -49,21 +65,6 @@ def TarkistaTODO(todo : TODO):
          
     return suoritettu, kuvaus, maarapaiva # Palauttaa suoritettu tekstin ja kuvauksen
 
-
-def TulostaTODOTehtava(todo): # Tulostaa tietyn tehtavan
-    table = PrettyTable()
-    table.field_names = todoOtsikot # Asettaa otsikot
-    suoritettu, kuvaus, maarapaiva = TarkistaTODO(todo)                   
-    # Lisää tehtavan tiedot taulukkoon
-    table.add_row([todo.ID, todo.otsikko, kuvaus ,todo.luotuPaivamaara, maarapaiva, suoritettu]) 
-    print(table) # TUlostaa taulukon
-
-def TulostaSuoritetutTehtavat(): 
-    TulostaTehtavatSuorituksenMukaan(True) # Kutsuu TulostaTehtavatSuorituksenMukaan funktiota
-
-
-def TulostaTekemattomatTehtavat(): 
-    TulostaTehtavatSuorituksenMukaan(False) # Kutsuu TulostaTehtavatSuorituksenMukaan funktiota
 
 def TulostaTehtavatSuorituksenMukaan(suoritettu): # Tulostaa tekemattomat tai suoritetut tehtavat
     table = PrettyTable()
